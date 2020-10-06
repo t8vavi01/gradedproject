@@ -36,12 +36,11 @@ paths:
             schema:
               type: object
               properties:
-                firstName:
-                  type: string
-                lastName:
+                fullName:
                   type: string
                 birthDate:
                   type: string
+                  description: ISO 8601
                 eMail:
                   type: string
                 phoneNumber:
@@ -50,5 +49,21 @@ paths:
                   type: string
                 passWord:
                   type: string
+              required:
+                - fullName
+                - birthDate
+                - eMail
+                - phoneNumber
+                - userName
+                - passWord
+            examples:
+              example-1:
+                value:
+                  fullName: Name Namersson
+                  birthDate: '2020-10-06'
+                  eMail: string
+                  phoneNumber: string
+                  userName: NamNam
+                  passWord: string
 components:
   schemas: {}
