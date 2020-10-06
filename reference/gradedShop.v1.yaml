@@ -92,8 +92,16 @@ paths:
                 category:
                   type: string
                 images:
-                  type: array
-                  items: {}
+                  type: object
+                  properties:
+                    imageOne:
+                      type: object
+                    imageTwo:
+                      type: object
+                    imageThree:
+                      type: object
+                    imageFour:
+                      type: object
                 askingPrice:
                   type: number
                 postDate:
@@ -108,6 +116,22 @@ paths:
                     address:
                       type: string
                     zipCode:
+                      type: string
+                deliveryTYpe:
+                  type: object
+                  properties:
+                    shipping:
+                      type: string
+                    pickup:
+                      type: string
+                seller:
+                  type: object
+                  properties:
+                    sellerName:
+                      type: string
+                    eMail:
+                      type: string
+                    phoneNumber:
                       type: string
 components:
   schemas: {}
