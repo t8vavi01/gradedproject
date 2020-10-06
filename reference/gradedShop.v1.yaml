@@ -76,8 +76,17 @@ paths:
       summary: ''
       operationId: post-posting
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Posting created succesfully!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  postingID:
+                    type: integer
+        '400':
+          description: Bad Request
       description: Create a new posting
       requestBody:
         content:
@@ -106,6 +115,108 @@ paths:
                   type: number
                 postDate:
                   type: string
+                  description: ISO 8601
+                location:
+                  type: object
+                  required:
+                    - town
+                    - country
+                    - address
+                    - zipCode
+                  properties:
+                    town:
+                      type: string
+                    country:
+                      type: string
+                    address:
+                      type: string
+                    zipCode:
+                      type: string
+                deliveryType:
+                  type: string
+                seller:
+                  type: object
+                  required:
+                    - sellerName
+                    - eMail
+                    - phoneNumber
+                  properties:
+                    sellerName:
+                      type: string
+                    eMail:
+                      type: string
+                      format: email
+                    phoneNumber:
+                      type: string
+              required:
+                - title
+                - description
+                - category
+                - askingPrice
+                - postDate
+                - location
+                - deliveryType
+                - seller
+            examples:
+              example-1:
+                value:
+                  title: string
+                  description: string
+                  category: string
+                  images:
+                    imageOne: {}
+                    imageTwo: {}
+                    imageThree: {}
+                    imageFour: {}
+                  askingPrice: 0
+                  postDate: '2020-10-06'
+                  location:
+                    town: string
+                    country: string
+                    address: string
+                    zipCode: string
+                  deliveryType:
+                    shipping: string
+                    pickup: string
+                  seller:
+                    sellerName: string
+                    eMail: string
+                    phoneNumber: string
+    put:
+      summary: ''
+      operationId: put-posting
+      responses:
+        '200':
+          description: OK
+      description: In this endpoint you can edit the information of your posting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                category:
+                  type: string
+                images:
+                  type: object
+                  properties:
+                    imageOne:
+                      type: object
+                    imageTwo:
+                      type: object
+                    imageThree:
+                      type: object
+                    imageFour:
+                      type: object
+                askingPrice:
+                  type: number
+                postDate:
+                  type: string
+                  description: ISO 8601
                 location:
                   type: object
                   properties:
@@ -117,13 +228,8 @@ paths:
                       type: string
                     zipCode:
                       type: string
-                deliveryTYpe:
-                  type: object
-                  properties:
-                    shipping:
-                      type: string
-                    pickup:
-                      type: string
+                deliveryType:
+                  type: string
                 seller:
                   type: object
                   properties:
@@ -131,7 +237,31 @@ paths:
                       type: string
                     eMail:
                       type: string
+                      format: email
                     phoneNumber:
                       type: string
+            examples:
+              example-1:
+                value:
+                  title: string
+                  description: string
+                  category: string
+                  images:
+                    imageOne: {}
+                    imageTwo: {}
+                    imageThree: {}
+                    imageFour: {}
+                  askingPrice: 0
+                  postDate: '2020-10-06'
+                  location:
+                    town: string
+                    country: string
+                    address: string
+                    zipCode: string
+                  deliveryType: string
+                  seller:
+                    sellerName: string
+                    eMail: user@example.com
+                    phoneNumber: string
 components:
   schemas: {}
