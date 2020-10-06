@@ -349,11 +349,6 @@ paths:
           in: query
           name: location
   /login:
-    get:
-      summary: Login
-      tags: []
-      responses: {}
-      operationId: get-login
     post:
       summary: ''
       operationId: post-login
