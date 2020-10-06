@@ -5,24 +5,7 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /postings/creatEdit:
-    get:
-      summary: Your GET endpoint
-      tags: []
-      responses: {}
-      operationId: get-postings-creatEdit
-  /searchPostings:
-    get:
-      summary: Your GET endpoint
-      tags: []
-      responses: {}
-      operationId: get-searchPostings
   /registration:
-    get:
-      summary: User registration
-      tags: []
-      responses: {}
-      operationId: get-registration
     post:
       summary: ''
       operationId: post-registration
@@ -38,6 +21,17 @@ paths:
                     type: integer
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorDescription:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    '': string
       description: This endpoint is used to create an user
       requestBody:
         content:
@@ -72,5 +66,48 @@ paths:
                   eMail: example@examplemail.com
                   userName: NamNam
                   passWord: examplePassWord
+  /posting:
+    get:
+      summary: Posting operations
+      tags: []
+      responses: {}
+      operationId: get-posting
+    post:
+      summary: ''
+      operationId: post-posting
+      responses:
+        '200':
+          description: OK
+      description: Create a new posting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                category:
+                  type: string
+                images:
+                  type: array
+                  items: {}
+                askingPrice:
+                  type: number
+                postDate:
+                  type: string
+                location:
+                  type: object
+                  properties:
+                    town:
+                      type: string
+                    country:
+                      type: string
+                    address:
+                      type: string
+                    zipCode:
+                      type: string
 components:
   schemas: {}
