@@ -80,6 +80,10 @@ paths:
                 properties:
                   postingID:
                     type: integer
+              examples:
+                example-1:
+                  value:
+                    postingID: 0
         '400':
           description: Bad Request
       description: Create a new posting
@@ -173,7 +177,7 @@ paths:
                   deliveryType: string
                   seller:
                     sellerName: string
-                    eMail: string
+                    eMail: user@example.com
                     phoneNumber: string
     put:
       summary: ''
