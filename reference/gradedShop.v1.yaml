@@ -27,8 +27,17 @@ paths:
       summary: ''
       operationId: post-registration
       responses:
-        '200':
-          description: OK
+        '201':
+          description: User created succesfully!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userID:
+                    type: integer
+        '400':
+          description: Bad Request
       description: This endpoint is used to create an user
       requestBody:
         content:
@@ -43,10 +52,12 @@ paths:
                   description: ISO 8601
                 eMail:
                   type: string
+                  format: email
                 userName:
                   type: string
                 passWord:
                   type: string
+                  format: password
               required:
                 - fullName
                 - birthDate
