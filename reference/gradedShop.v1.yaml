@@ -274,6 +274,78 @@ paths:
         name: postingID
         in: path
         required: true
+  /posting/search:
+    get:
+      summary: Search posts
+      tags: []
+      responses:
+        '200':
+          description: Search ended succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  category:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      imageOne:
+                        type: string
+                      imageTwo:
+                        type: string
+                      imageThree:
+                        type: string
+                      imageFour:
+                        type: string
+                  askingPrice:
+                    type: number
+                  postDate:
+                    type: string
+                  location:
+                    type: object
+                    properties:
+                      town:
+                        type: string
+                      country:
+                        type: string
+                      address:
+                        type: string
+                      zipCode:
+                        type: string
+                  deliveryType:
+                    type: string
+                  seller:
+                    type: object
+                    properties:
+                      sellerName:
+                        type: string
+                      eMail:
+                        type: string
+                        format: email
+                      address:
+                        type: string
+        '404':
+          description: Your search result did not match any existing posting
+      operationId: get-posting-search
+      description: Search posts made
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: category
+        - schema:
+            type: string
+          in: query
+          name: date
+        - schema: {}
+          in: query
+          name: location
 components:
   schemas: {}
   securitySchemes:
