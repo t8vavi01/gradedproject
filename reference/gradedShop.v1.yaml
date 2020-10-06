@@ -170,9 +170,7 @@ paths:
                     country: string
                     address: string
                     zipCode: string
-                  deliveryType:
-                    shipping: string
-                    pickup: string
+                  deliveryType: string
                   seller:
                     sellerName: string
                     eMail: string
