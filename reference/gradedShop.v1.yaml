@@ -67,11 +67,6 @@ paths:
                   userName: NamNam
                   passWord: examplePassWord
   /posting:
-    get:
-      summary: Posting operations
-      tags: []
-      responses: {}
-      operationId: get-posting
     post:
       summary: ''
       operationId: post-posting
@@ -187,7 +182,7 @@ paths:
       operationId: put-posting
       responses:
         '200':
-          description: OK
+          description: Edits were made succesfully
       description: In this endpoint you can edit the information of your posting
       requestBody:
         content:
@@ -263,5 +258,25 @@ paths:
                     sellerName: string
                     eMail: user@example.com
                     phoneNumber: string
+  '/posting/{postingID}':
+    delete:
+      summary: ''
+      operationId: delete-posting
+      responses:
+        '200':
+          description: Succesfully deleted!
+      description: Delete a posting
+      security:
+        - HTTPBasic: []
+    parameters:
+      - schema:
+          type: string
+        name: postingID
+        in: path
+        required: true
 components:
   schemas: {}
+  securitySchemes:
+    HTTPBasic:
+      type: http
+      scheme: basic
