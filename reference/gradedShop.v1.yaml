@@ -43,8 +43,6 @@ paths:
                   description: ISO 8601
                 eMail:
                   type: string
-                phoneNumber:
-                  type: string
                 userName:
                   type: string
                 passWord:
@@ -53,7 +51,6 @@ paths:
                 - fullName
                 - birthDate
                 - eMail
-                - phoneNumber
                 - userName
                 - passWord
             examples:
@@ -61,9 +58,8 @@ paths:
                 value:
                   fullName: Name Namersson
                   birthDate: '2020-10-06'
-                  eMail: string
-                  phoneNumber: string
+                  eMail: example@examplemail.com
                   userName: NamNam
-                  passWord: string
+                  passWord: examplePassWord
 components:
   schemas: {}
