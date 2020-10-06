@@ -346,6 +346,23 @@ paths:
         - schema: {}
           in: query
           name: location
+  /login:
+    get:
+      summary: Login
+      tags: []
+      responses: {}
+      operationId: get-login
+    post:
+      summary: ''
+      operationId: post-login
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+      description: Enpoint used to log in with username and password
+      security:
+        - HTTPBasic: []
 components:
   schemas: {}
   securitySchemes:
