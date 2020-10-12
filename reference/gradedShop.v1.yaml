@@ -145,6 +145,8 @@ paths:
                 - postDate
                 - location
                 - seller
+                - pickUpDel
+                - deliveryDel
             examples:
               example-1:
                 value:
