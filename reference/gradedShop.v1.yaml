@@ -11,14 +11,11 @@ paths:
       operationId: post-registration
       responses:
         '201':
-          description: User created succesfully!
+          description: OK
           content:
             application/json:
               schema:
                 type: object
-                properties:
-                  userID:
-                    type: integer
         '400':
           description: Bad Request
           content:
@@ -71,19 +68,8 @@ paths:
       summary: ''
       operationId: post-posting
       responses:
-        '201':
-          description: Posting created succesfully!
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  postingID:
-                    type: integer
-              examples:
-                example-1:
-                  value:
-                    postingID: 0
+        '200':
+          description: OK
         '400':
           description: Bad Request
       description: Create a new posting
@@ -147,6 +133,8 @@ paths:
                       format: email
                     phoneNumber:
                       type: string
+                postingID:
+                  type: integer
               required:
                 - title
                 - description
