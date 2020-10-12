@@ -117,8 +117,6 @@ paths:
                       type: string
                     zipCode:
                       type: string
-                deliveryType:
-                  type: string
                 seller:
                   type: object
                   required:
@@ -135,6 +133,10 @@ paths:
                       type: string
                 postingID:
                   type: integer
+                pickUpDel:
+                  type: boolean
+                deliveryDel:
+                  type: boolean
               required:
                 - title
                 - description
@@ -142,7 +144,6 @@ paths:
                 - askingPrice
                 - postDate
                 - location
-                - deliveryType
                 - seller
             examples:
               example-1:
