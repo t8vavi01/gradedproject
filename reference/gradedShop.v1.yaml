@@ -338,27 +338,6 @@ paths:
         name: category
         in: path
         required: true
-  /login:
-    post:
-      summary: ''
-      operationId: post-login
-      responses:
-        '200':
-          description: Login succesfull
-        '401':
-          description: 'Unauthorized, user name, password or both are incorrect'
-      description: Enpoint used to log in with username and password
-      security:
-        - HTTPBasic: []
-      parameters:
-        - schema:
-            type: string
-          in: query
-          name: userName
-        - schema:
-            type: string
-          in: query
-          name: passWord
   '/posting/search/{location}':
     get:
       summary: Search by location
