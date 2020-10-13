@@ -154,10 +154,10 @@ paths:
                   description: string
                   category: string
                   images:
-                    imageOne: {}
-                    imageTwo: {}
-                    imageThree: {}
-                    imageFour: {}
+                    imageOneURL: ''
+                    imageTwoURL: ''
+                    imageThreeURL: ''
+                    imageFourURL: ''
                   askingPrice: 0
                   postDate: '2020-10-06'
                   location:
@@ -176,6 +176,8 @@ paths:
       responses:
         '200':
           description: Edits were made succesfully
+        '400':
+          description: Bad Request
       description: In this endpoint you can edit the information of your posting
       requestBody:
         content:
@@ -262,6 +264,8 @@ paths:
       responses:
         '200':
           description: Succesfully deleted!
+        '400':
+          description: Bad Request
       description: Delete a posting
       security:
         - HTTPBasic: []
