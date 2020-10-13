@@ -275,7 +275,7 @@ paths:
         name: postingID
         in: path
         required: true
-  '/posting/search/{category}':
+  '/posting/searchByCategory/{category}':
     get:
       summary: Search by category
       tags: []
@@ -346,7 +346,7 @@ paths:
         name: category
         in: path
         required: true
-  '/posting/search/{location}':
+  '/posting/searchByLocation/{location}':
     get:
       summary: Search by location
       tags: []
@@ -414,7 +414,7 @@ paths:
         name: location
         in: path
         required: true
-  '/posting/search/{postDate}':
+  '/posting/searchByDate/{postDate}':
     get:
       summary: Search by postdate
       tags: []
