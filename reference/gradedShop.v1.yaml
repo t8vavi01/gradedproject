@@ -323,6 +323,10 @@ paths:
                         format: email
                       address:
                         type: string
+                  pickupDel:
+                    type: boolean
+                  deliveryDel:
+                    type: boolean
         '404':
           description: Your search result did not match any existing posting
       operationId: get-posting-search
@@ -406,8 +410,13 @@ paths:
                         type: string
                       eMail:
                         type: string
+                        format: email
                       address:
                         type: string
+                  pickupDel:
+                    type: boolean
+                  deliveryDel:
+                    type: boolean
         '404':
           description: Not Found
       operationId: get-posting-search
@@ -416,6 +425,74 @@ paths:
       - schema:
           type: string
         name: location
+        in: path
+        required: true
+  '/posting/search/{postDate}':
+    get:
+      summary: Search by postdate
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  category:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      imageOne:
+                        type: object
+                      imageTwo:
+                        type: object
+                      imageThree:
+                        type: object
+                      imageFour:
+                        type: object
+                  askingPrice:
+                    type: number
+                  postDate:
+                    type: string
+                  location:
+                    type: object
+                    properties:
+                      town:
+                        type: string
+                      country:
+                        type: string
+                      address:
+                        type: string
+                      zipCode:
+                        type: string
+                  seller:
+                    type: object
+                    properties:
+                      sellerName:
+                        type: string
+                      eMail:
+                        type: string
+                        format: email
+                      address:
+                        type: string
+                  pickupDel:
+                    type: boolean
+                  deliveryDel:
+                    type: boolean
+        '404':
+          description: Not Found
+      operationId: get-posting-search
+      description: This endpoint is used to search by posting date
+    parameters:
+      - schema:
+          type: string
+        name: postDate
         in: path
         required: true
 components:
