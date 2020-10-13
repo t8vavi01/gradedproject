@@ -88,14 +88,14 @@ paths:
                 images:
                   type: object
                   properties:
-                    imageOne:
-                      type: object
-                    imageTwo:
-                      type: object
-                    imageThree:
-                      type: object
-                    imageFour:
-                      type: object
+                    imageOneURL:
+                      type: string
+                    imageTwoURL:
+                      type: string
+                    imageThreeURL:
+                      type: string
+                    imageFourURL:
+                      type: string
                 askingPrice:
                   type: number
                 postDate:
@@ -192,14 +192,14 @@ paths:
                 images:
                   type: object
                   properties:
-                    imageOne:
-                      type: object
-                    imageTwo:
-                      type: object
-                    imageThree:
-                      type: object
-                    imageFour:
-                      type: object
+                    imageOneURL:
+                      type: string
+                    imageTwoURL:
+                      type: string
+                    imageThreeURL:
+                      type: string
+                    imageFourURL:
+                      type: string
                 askingPrice:
                   type: number
                 postDate:
@@ -228,6 +228,10 @@ paths:
                       format: email
                     phoneNumber:
                       type: string
+                pickupDel:
+                  type: boolean
+                deliveryDel:
+                  type: boolean
             examples:
               example-1:
                 value:
@@ -288,13 +292,13 @@ paths:
                   images:
                     type: object
                     properties:
-                      imageOne:
+                      imageOneURL:
                         type: string
-                      imageTwo:
+                      imageTwoURL:
                         type: string
-                      imageThree:
+                      imageThreeURL:
                         type: string
-                      imageFour:
+                      imageFourURL:
                         type: string
                   askingPrice:
                     type: number
@@ -359,14 +363,14 @@ paths:
                   images:
                     type: object
                     properties:
-                      imageOne:
-                        type: object
-                      imageTwo:
-                        type: object
-                      imageThree:
-                        type: object
-                      imageFour:
-                        type: object
+                      imageOneURL:
+                        type: string
+                      imageTwoURL:
+                        type: string
+                      imageThreeURL:
+                        type: string
+                      imageFourURL:
+                        type: string
                   askingPrice:
                     type: number
                   postDate:
@@ -427,14 +431,14 @@ paths:
                   images:
                     type: object
                     properties:
-                      imageOne:
-                        type: object
-                      imageTwo:
-                        type: object
-                      imageThree:
-                        type: object
-                      imageFour:
-                        type: object
+                      imageOneURL:
+                        type: string
+                      imageTwoURL:
+                        type: string
+                      imageThreeURL:
+                        type: string
+                      imageFourURL:
+                        type: string
                   askingPrice:
                     type: number
                   postDate:
