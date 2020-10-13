@@ -269,7 +269,7 @@ paths:
         required: true
   '/posting/search/{category}':
     get:
-      summary: Search posts
+      summary: Search by category
       tags: []
       responses:
         '200':
@@ -326,7 +326,7 @@ paths:
         '404':
           description: Your search result did not match any existing posting
       operationId: get-posting-search
-      description: Search posts made
+      description: This endpoint is used to search postings by category
       parameters: []
     parameters:
       - schema:
@@ -355,6 +355,69 @@ paths:
             type: string
           in: query
           name: passWord
+  '/posting/search/{location}':
+    get:
+      summary: Search by location
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  category:
+                    type: string
+                  images:
+                    type: object
+                    properties:
+                      imageOne:
+                        type: object
+                      imageTwo:
+                        type: object
+                      imageThree:
+                        type: object
+                      imageFour:
+                        type: object
+                  askingPrice:
+                    type: number
+                  postDate:
+                    type: string
+                  location:
+                    type: object
+                    properties:
+                      town:
+                        type: string
+                      country:
+                        type: string
+                      address:
+                        type: string
+                      zipCode:
+                        type: string
+                  seller:
+                    type: object
+                    properties:
+                      sellerName:
+                        type: string
+                      eMail:
+                        type: string
+                      address:
+                        type: string
+        '404':
+          description: Not Found
+      operationId: get-posting-search
+      description: This endpoint is used to search by location
+    parameters:
+      - schema:
+          type: string
+        name: location
+        in: path
+        required: true
 components:
   schemas: {}
   securitySchemes:
